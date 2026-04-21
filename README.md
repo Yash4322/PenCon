@@ -135,6 +135,71 @@ Do not use it on systems without proper permission.
 
 ---
 
+## 📥 Installation & Setup
+
+### 🔹 1. Clone the Repository
+
+```bash
+git clone https://github.com/Yash4322/PenCon.git
+cd PenCon
+```
+
+---
+
+### 🔹 2. Make the Tool Executable
+
+```bash
+chmod +x pencon
+```
+
+---
+
+### 🔹 3. Run Locally
+
+```bash
+./pencon
+```
+
+---
+
+### 🔹 4. (Optional) Install Globally
+
+This allows you to run `pencon` from anywhere:
+
+```bash
+sudo mv pencon /usr/local/bin/
+```
+
+---
+
+### 🔹 5. Verify Installation
+
+```bash
+pencon -h
+```
+
+---
+
+## ⚠️ Requirements
+
+* Python 3.x
+* Netcat (`nc`) installed
+* Linux environment (tested on Kali Linux)
+
+---
+
+## 🧪 Quick Demo
+
+```bash
+# Terminal 1
+pencon -l -p 4444
+
+# Terminal 2
+pencon -s -i 127.0.0.1 -p 4444 -t python
+```
+
+Execute generated payload → receive shell.
+
 ## 👨‍💻 Author
 
 **Yash Gupta (Arylide)**
