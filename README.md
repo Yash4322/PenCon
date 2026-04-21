@@ -1,20 +1,176 @@
-# PenCon - CLI Exploitation Toolkit
+# ⚡ PenCon - CLI Exploitation Toolkit
 
-A command-line toolkit that automates common exploitation tasks such as reverse shell generation, payload encoding, and listener setup.
+PenCon is a lightweight, terminal-based exploitation toolkit designed to streamline common post-exploitation tasks such as reverse shell generation, payload encoding, and listener setup.
 
-## Features
-- Reverse shell generator
-- Payload encoding
-- Listener automation
-- Cheatsheet access
+Built for **CTF players, cybersecurity students, and aspiring red teamers**, PenCon eliminates the need to search for payloads during engagements.
 
-## Usage
+---
 
-Generate shell:
-pencon shell --ip 127.0.0.1 --port 4444 --type bash
+## 🚀 Features
 
-Start listener:
-pencon listen --port 4444
+* 🔹 Reverse shell generator (multiple payload types)
+* 🔹 Built-in Netcat listener
+* 🔹 Payload encoder (Base64, URL, Hex)
+* 🔹 Cheatsheet for quick reference
+* 🔹 Clean CLI interface with short flags
+* 🔹 Fully portable & terminal-based
 
-Encode payload:
-pencon encode --type base64 --data "whoami"
+---
+
+## 🧰 Supported Reverse Shells
+
+* `bash`
+* `python`
+* `php`
+* `php-rev` (PentestMonkey full reverse shell)
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/Yash4322/PenCon.git
+cd PenCon
+chmod +x pencon
+sudo mv pencon /usr/local/bin/
+```
+
+---
+
+## ⚙️ Usage
+
+### 🔹 Show banner
+
+```bash
+pencon
+```
+
+---
+
+### 🔹 Help menu
+
+```bash
+pencon -h
+```
+
+---
+
+### 🔹 Generate Reverse Shell
+
+```bash
+pencon -s -i <IP> -p <PORT> -t <TYPE>
+```
+
+**Example:**
+
+```bash
+pencon -s -i 127.0.0.1 -p 4444 -t python
+```
+
+---
+
+### 🔹 Start Listener
+
+```bash
+pencon -l -p <PORT>
+```
+
+**Example:**
+
+```bash
+pencon -l -p 4444
+```
+
+---
+
+### 🔹 Encode Payload
+
+```bash
+pencon -e -t <TYPE> -d <DATA>
+```
+
+**Example:**
+
+```bash
+pencon -e -t base64 -d "whoami"
+```
+
+---
+
+### 🔹 Cheatsheet
+
+```bash
+pencon -c
+```
+
+---
+
+## 🎯 Example Workflow
+
+```bash
+# Terminal 1
+pencon -l -p 4444
+
+# Terminal 2
+pencon -s -i 127.0.0.1 -p 4444 -t python
+```
+
+Execute generated payload → receive shell.
+
+---
+
+## 🧠 Use Cases
+
+* Capture The Flag (CTF) challenges
+* Web exploitation (RCE, file upload)
+* Payload obfuscation & bypassing filters
+* Learning and practicing post-exploitation techniques
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is intended for **educational and authorized security testing only**.
+Do not use it on systems without proper permission.
+
+---
+
+## 👨‍💻 Author
+
+**Yash Gupta (Arylide)**
+GitHub: https://github.com/Yash4322
+
+---
+
+## 🤝 Contributors
+
+* Pathi Aman Pal
+
+---
+
+## ⭐ Support
+
+If you found this project useful:
+
+* ⭐ Star the repository
+* 🍴 Fork it
+* 🛠️ Contribute improvements
+
+---
+
+## 🔥 Future Improvements
+
+* More payload types (nc, mkfifo, powershell)
+* File output support (`--save`)
+* Auto listener + payload execution
+* Colored output & UX improvements
+
+---
+
+## 🏁 Status
+
+✔ Active Development
+✔ Demo Ready
+✔ CTF Friendly
+
+---
